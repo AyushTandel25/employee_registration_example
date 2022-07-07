@@ -121,155 +121,157 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                               SizedBox(
                                 height:
                                     sizeUtils.getScreenHeight(context) * 0.4,
-                                child: SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      CustomTextField(
-                                        controller: nameController,
-                                        focusNode: nameFocusNode,
-                                        hintText: "Name",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText:
-                                                  "Please enter password")
-                                        ]),
-                                        suffixIcon: Icons.person,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.name,
-                                      ),
-                                      CustomTextField(
-                                        controller: ageController,
-                                        focusNode: ageFocusNode,
-                                        hintText: "Age",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter name")
-                                        ]),
-                                        suffixIcon:
-                                            Icons.calendar_month_outlined,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.number,
-                                      ),
-                                      CustomTextField(
-                                        controller: mobNoController,
-                                        focusNode: mobNoFocusNode,
-                                        hintText: "Mobile number",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter phone"),
-                                          MaxLengthValidator(10,
-                                              errorText:
-                                                  "Please enter valid pincode")
-                                        ]),
-                                        maxLength: 10,
-                                        suffixIcon:
-                                            Icons.phone_android_outlined,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.phone,
-                                      ),
-                                      CustomTextField(
-                                        controller: emailController,
-                                        focusNode: emailFocusNode,
-                                        hintText: "Email",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter email"),
-                                          EmailValidator(
-                                              errorText:
-                                                  "Please enter valid email")
-                                        ]),
-                                        suffixIcon: Icons.email,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.emailAddress,
-                                      ),
-                                      CustomTextField(
-                                        controller: addressController,
-                                        focusNode: addressFocusNode,
-                                        hintText: "Address Line 1",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter address")
-                                        ]),
-                                        suffixIcon: Icons.place_rounded,
-                                        inputAction: TextInputAction.next,
-                                        maxLines: 3,
-                                        inputType: TextInputType.streetAddress,
-                                      ),
-                                      CustomTextField(
-                                        controller: stateController,
-                                        focusNode: stateFocusNode,
-                                        hintText: "State",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter state")
-                                        ]),
-                                        suffixIcon: Icons.place_rounded,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.text,
-                                      ),
-                                      CustomTextField(
-                                        controller: countryController,
-                                        focusNode: countryFocusNode,
-                                        hintText: "Country",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText: "Please enter country")
-                                        ]),
-                                        suffixIcon: Icons.place_rounded,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.text,
-                                      ),
-                                      CustomTextField(
-                                        controller: pincodeController,
-                                        focusNode: pincodeFocusNode,
-                                        hintText: "Pincode",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText:
-                                                  "Please enter pincode"),
-                                          MaxLengthValidator(6,
-                                              errorText:
-                                                  "Please enter valid pincode")
-                                        ]),
-                                        maxLength: 6,
-                                        suffixIcon: Icons.place_rounded,
-                                        inputAction: TextInputAction.next,
-                                        inputType: TextInputType.number,
-                                      ),
-                                      CustomTextField(
-                                        controller: passwordController,
-                                        focusNode: passwordFocusNode,
-                                        hintText: "Password",
-                                        validator: MultiValidator([
-                                          MinLengthValidator(1,
-                                              errorText:
-                                                  "Please enter password")
-                                        ]),
-                                        suffixIcon: Icons.settings,
-                                        inputAction: TextInputAction.next,
-                                        inputType:
-                                            TextInputType.visiblePassword,
-                                      ),
-                                      CustomTextField(
-                                        controller: cPasswordController,
-                                        focusNode: cPasswordFocusNode,
-                                        hintText: "Confirm Password",
-                                        validator: MultiValidator([
-                                          PatternValidator(
-                                              passwordController.text,
-                                              errorText:
-                                                  "Please same as password",
-                                              caseSensitive: true)
-                                        ]),
-                                        suffixIcon: Icons.settings,
-                                        inputAction: TextInputAction.done,
-                                        inputType:
-                                            TextInputType.visiblePassword,
-                                      ),
-                                    ],
+                                child: Scrollbar(
+                                  child: SingleChildScrollView(
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        CustomTextField(
+                                          controller: nameController,
+                                          focusNode: nameFocusNode,
+                                          hintText: "Name",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText:
+                                                    "Please enter password")
+                                          ]),
+                                          suffixIcon: Icons.person,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.name,
+                                        ),
+                                        CustomTextField(
+                                          controller: ageController,
+                                          focusNode: ageFocusNode,
+                                          hintText: "Age",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter name")
+                                          ]),
+                                          suffixIcon:
+                                              Icons.calendar_month_outlined,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.number,
+                                        ),
+                                        CustomTextField(
+                                          controller: mobNoController,
+                                          focusNode: mobNoFocusNode,
+                                          hintText: "Mobile number",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter phone"),
+                                            MaxLengthValidator(10,
+                                                errorText:
+                                                    "Please enter valid pincode")
+                                          ]),
+                                          maxLength: 10,
+                                          suffixIcon:
+                                              Icons.phone_android_outlined,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.phone,
+                                        ),
+                                        CustomTextField(
+                                          controller: emailController,
+                                          focusNode: emailFocusNode,
+                                          hintText: "Email",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter email"),
+                                            EmailValidator(
+                                                errorText:
+                                                    "Please enter valid email")
+                                          ]),
+                                          suffixIcon: Icons.email,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.emailAddress,
+                                        ),
+                                        CustomTextField(
+                                          controller: addressController,
+                                          focusNode: addressFocusNode,
+                                          hintText: "Address Line 1",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter address")
+                                          ]),
+                                          suffixIcon: Icons.place_rounded,
+                                          inputAction: TextInputAction.next,
+                                          maxLines: 3,
+                                          inputType: TextInputType.streetAddress,
+                                        ),
+                                        CustomTextField(
+                                          controller: stateController,
+                                          focusNode: stateFocusNode,
+                                          hintText: "State",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter state")
+                                          ]),
+                                          suffixIcon: Icons.place_rounded,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.text,
+                                        ),
+                                        CustomTextField(
+                                          controller: countryController,
+                                          focusNode: countryFocusNode,
+                                          hintText: "Country",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText: "Please enter country")
+                                          ]),
+                                          suffixIcon: Icons.place_rounded,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.text,
+                                        ),
+                                        CustomTextField(
+                                          controller: pincodeController,
+                                          focusNode: pincodeFocusNode,
+                                          hintText: "Pincode",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText:
+                                                    "Please enter pincode"),
+                                            MaxLengthValidator(6,
+                                                errorText:
+                                                    "Please enter valid pincode")
+                                          ]),
+                                          maxLength: 6,
+                                          suffixIcon: Icons.place_rounded,
+                                          inputAction: TextInputAction.next,
+                                          inputType: TextInputType.number,
+                                        ),
+                                        CustomTextField(
+                                          controller: passwordController,
+                                          focusNode: passwordFocusNode,
+                                          hintText: "Password",
+                                          validator: MultiValidator([
+                                            MinLengthValidator(1,
+                                                errorText:
+                                                    "Please enter password")
+                                          ]),
+                                          suffixIcon: Icons.settings,
+                                          inputAction: TextInputAction.next,
+                                          inputType:
+                                              TextInputType.visiblePassword,
+                                        ),
+                                        CustomTextField(
+                                          controller: cPasswordController,
+                                          focusNode: cPasswordFocusNode,
+                                          hintText: "Confirm Password",
+                                          validator: MultiValidator([
+                                            PatternValidator(
+                                                passwordController.text,
+                                                errorText:
+                                                    "Please same as password",
+                                                caseSensitive: true)
+                                          ]),
+                                          suffixIcon: Icons.settings,
+                                          inputAction: TextInputAction.done,
+                                          inputType:
+                                              TextInputType.visiblePassword,
+                                        ),
+                                      ],
+                                    ),
                                   ),
                                 ),
                               ),
